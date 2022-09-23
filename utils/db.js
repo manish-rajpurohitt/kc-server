@@ -1,5 +1,4 @@
 require('dotenv').config();
-const chalk = require('chalk');
 const mongoose = require('mongoose');
 
 const keys = require('../config/keys');
