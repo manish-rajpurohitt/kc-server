@@ -25,7 +25,6 @@ app.use(
   })
 );
 app.use(cors());
-app.use(express.static(path.resolve(__dirname, '../dist')));
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -36,14 +35,6 @@ cloudinary.config({
 setupDB();
 require('./config/passport')(app);
 app.use(routes);
-
-console.log('process.env.NODE_ENV ', process.env.NODE_ENV);
-if (process.env.NODE_ENV === 'production') {
-  app.use(compression());
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../dist/index.html'));
-  });
-}
 
 const server = app.listen(port, () => {
   console.log(
