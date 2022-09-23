@@ -16,7 +16,7 @@ const setupDB = async () => {
         useFindAndModify: false
       })
       .then(() =>
-        console.log(`${chalk.green('✓')} ${chalk.blue('MongoDB Connected!')}`)
+        console.log('MongoDB Connected!')
       )
       .catch(err => console.log(err));
   } catch (error) {
