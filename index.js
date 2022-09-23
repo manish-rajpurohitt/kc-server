@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const chalk = require('chalk');
 const compression = require('compression');
 const cors = require('cors');
 const path = require('path');
@@ -38,9 +37,7 @@ app.use(routes);
 
 const server = app.listen(port, () => {
   console.log(
-    `${chalk.green('✓')} ${chalk.blue(
       `Listening on port ${port}. Visit http://localhost:${port}/ in your browser.`
-    )}`
   );
 });
 
